@@ -5,7 +5,7 @@ import com.deathmotion.anticheatbase.api.versioning.ACVersion;
 import com.deathmotion.anticheatbase.common.util.ACVersions;
 import org.jetbrains.annotations.NotNull;
 
-public class ACPlatformAPI implements AnticheatBaseAPI {
+public final class ACPlatformAPI implements AnticheatBaseAPI {
 
     @Override
     public @NotNull ACVersion getVersion() {
