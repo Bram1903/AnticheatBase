@@ -2,19 +2,18 @@ plugins {
     java
 }
 
-group = rootProject.group
 version = rootProject.version
-description = project.description
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven("https://repo.codemc.io/repository/maven-releases/")
     maven("https://repo.codemc.io/repository/maven-snapshots/")
 }
 
 dependencies {
-    compileOnly("org.jetbrains:annotations:23.0.0")
+    compileOnly("org.jetbrains:annotations:26.0.2-1")
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
 }
 
 java {
@@ -32,17 +31,17 @@ tasks {
         failOnNoDiscoveredTests = false
     }
 
+    defaultTasks("build")
+
     processResources {
         inputs.properties(
             "version" to rootProject.ext["versionNoHash"].toString()
         )
 
-        filesMatching(listOf("plugin.yml", "bungee.yml", "velocity-plugin.json")) {
+        filesMatching(listOf("plugin.yml")) {
             expand(
                 "version" to rootProject.ext["versionNoHash"].toString()
             )
         }
     }
-
-    defaultTasks("build")
 }

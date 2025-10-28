@@ -1,4 +1,4 @@
-package com.deathmotion.anticheatexample.version
+package com.deathmotion.anticheatbase.version
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.Directory
@@ -7,7 +7,7 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 
-abstract class ACEVersionTask : DefaultTask() {
+abstract class ACVersionTask : DefaultTask() {
 
     companion object {
         const val TASK_NAME = "generateVersionsFile"
@@ -27,13 +27,13 @@ abstract class ACEVersionTask : DefaultTask() {
         val dir = outputDir.get().dir(packageName.replace('.', '/'))
         dir.asFile.mkdirs()
 
-        val file = dir.file("ACEVersions.java").asFile
+        val file = dir.file("ACVersions.java").asFile
         if (!file.exists()) {
             file.createNewFile()
         }
 
         val ver = Version.fromString(version)
-        logger.info("Generating ACEVersions.java with version $ver")
+        logger.info("Generating ACVersions.java with version $ver")
 
         file.writeText(
             """
@@ -42,18 +42,18 @@ abstract class ACEVersionTask : DefaultTask() {
              */
             package $packageName;
             
-            import com.deathmotion.exampleanticheat.api.versioning.ACEVersion;
+            import com.deathmotion.anticheatbase.api.versioning.ACVersion;
             
             import java.time.Instant;
             
-            public final class ACEVersions {
+            public final class ACVersions {
             
                 public static final String RAW = "$version";
                 public static final Instant BUILD_TIMESTAMP = Instant.ofEpochMilli(${System.currentTimeMillis()}L);
-                public static final ACEVersion CURRENT = new ACEVersion(${ver.major}, ${ver.minor}, ${ver.patch}, ${ver.quotedSnapshotCommit()});
-                public static final ACEVersion UNKNOWN = new ACEVersion(0, 0, 0);
+                public static final ACVersion CURRENT = new ACVersion(${ver.major}, ${ver.minor}, ${ver.patch}, ${ver.quotedSnapshotCommit()});
+                public static final ACVersion UNKNOWN = new ACVersion(0, 0, 0);
                 
-                private ACEVersions() {
+                private ACVersions() {
                     throw new IllegalStateException();
                 }
             }

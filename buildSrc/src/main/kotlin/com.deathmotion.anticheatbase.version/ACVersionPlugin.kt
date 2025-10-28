@@ -1,4 +1,4 @@
-package com.deathmotion.anticheatexample.version
+package com.deathmotion.anticheatbase.version
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -7,10 +7,10 @@ import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.kotlin.dsl.getByName
 import org.gradle.kotlin.dsl.register
 
-class ACEVersionPlugin : Plugin<Project> {
+class ACVersionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        val task = target.tasks.register<ACEVersionTask>(ACEVersionTask.TASK_NAME) {
+        val task = target.tasks.register<ACVersionTask>(ACVersionTask.TASK_NAME) {
             group = target.rootProject.name
 
             version = target.version.toString()

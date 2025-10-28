@@ -1,4 +1,4 @@
-package com.deathmotion.antihealthindicator.api.versioning;
+package com.deathmotion.anticheatbase.api.versioning;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -6,13 +6,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 /**
- * Represents an AnticheatExample version using Semantic Versioning.
+ * Represents the AntiCheat version using Semantic Versioning.
  * Supports version comparison, cloning, and provides a string representation.
  * Snapshot versioning is also supported.
  * Generally a snapshot version is published before the release version,
  * and thus, is considered "older" than the release version.
  */
-public class ACEVersion implements Comparable<ACEVersion> {
+public class ACVersion implements Comparable<ACVersion> {
 
     private final int major;
     private final int minor;
@@ -21,7 +21,7 @@ public class ACEVersion implements Comparable<ACEVersion> {
     private final @Nullable String snapshotCommit;
 
     /**
-     * Constructs a {@link ACEVersion} instance.
+     * Constructs a {@link ACVersion} instance.
      *
      * @param major          the major version number.
      * @param minor          the minor version number.
@@ -29,7 +29,7 @@ public class ACEVersion implements Comparable<ACEVersion> {
      * @param snapshot       whether the version is a snapshot.
      * @param snapshotCommit the snapshot commit hash, if available.
      */
-    public ACEVersion(
+    public ACVersion(
             final int major, final int minor, final int patch,
             final boolean snapshot, final @Nullable String snapshotCommit
     ) {
@@ -41,14 +41,14 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Constructs a {@link ACEVersion} instance.
+     * Constructs a {@link ACVersion} instance.
      *
      * @param major          the major version number.
      * @param minor          the minor version number.
      * @param patch          the patch version number.
      * @param snapshotCommit the snapshot commit hash, if available.
      */
-    public ACEVersion(
+    public ACVersion(
             final int major, final int minor, final int patch,
             final @Nullable String snapshotCommit
     ) {
@@ -56,35 +56,35 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Constructs a {@link ACEVersion} instance.
+     * Constructs a {@link ACVersion} instance.
      *
      * @param major    the major version number.
      * @param minor    the minor version number.
      * @param patch    the patch version number.
      * @param snapshot whether the version is a snapshot.
      */
-    public ACEVersion(final int major, final int minor, final int patch, final boolean snapshot) {
+    public ACVersion(final int major, final int minor, final int patch, final boolean snapshot) {
         this(major, minor, patch, snapshot, null);
     }
 
     /**
-     * Constructs a {@link ACEVersion} instance with snapshot defaulted to false.
+     * Constructs a {@link ACVersion} instance with snapshot defaulted to false.
      *
      * @param major the major version number.
      * @param minor the minor version number.
      * @param patch the patch version number.
      */
-    public ACEVersion(final int major, final int minor, final int patch) {
+    public ACVersion(final int major, final int minor, final int patch) {
         this(major, minor, patch, false);
     }
 
     /**
-     * Constructs a {@link ACEVersion} instance from a version string.
+     * Constructs a {@link ACVersion} instance from a version string.
      *
      * @param version the version string (e.g., "1.8.9-SNAPSHOT").
      * @throws IllegalArgumentException if the version string format is incorrect.
      */
-    public static ACEVersion fromString(@NotNull final String version) {
+    public static ACVersion fromString(@NotNull final String version) {
         String versionWithoutSnapshot = version.replace("-SNAPSHOT", "");
         String[] largeParts = versionWithoutSnapshot.split("\\+");
         String[] parts = largeParts.length > 0 ? largeParts[0].split("\\.") : null;
@@ -100,7 +100,7 @@ public class ACEVersion implements Comparable<ACEVersion> {
         boolean snapshot = version.contains("-SNAPSHOT");
         String snapshotCommit = largeParts.length > 1 ? largeParts[1] : null;
 
-        return new ACEVersion(major, minor, patch, snapshot, snapshotCommit);
+        return new ACVersion(major, minor, patch, snapshot, snapshotCommit);
     }
 
     /**
@@ -142,7 +142,7 @@ public class ACEVersion implements Comparable<ACEVersion> {
     /**
      * Gets the snapshot commit hash of the AnticheatExample snapshot version. May be of any length.
      * Availability is not guaranteed since it is contingent on how the program was built.
-     * Generally speaking, the commit hash can only be available if the AntiHealthIndicator version is a snapshot version.
+     * Generally speaking, the commit hash can only be available if the anticheat version is a snapshot version.
      *
      * @return the snapshot commit hash, if available.
      */
@@ -151,14 +151,14 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Compares this {@link ACEVersion} with another {@link ACEVersion}.
+     * Compares this {@link ACVersion} with another {@link ACVersion}.
      *
-     * @param other the other {@link ACEVersion}.
+     * @param other the other {@link ACVersion}.
      * @return a negative integer, zero, or a positive integer as this version can be less than,
      * equal to, or greater than the specified version.
      */
     @Override
-    public int compareTo(@NotNull final ACEVersion other) {
+    public int compareTo(@NotNull final ACVersion other) {
         int majorCompare = Integer.compare(this.major, other.major);
         if (majorCompare != 0) return majorCompare;
 
@@ -172,16 +172,16 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Checks if the provided object is equal to this {@link ACEVersion}.
+     * Checks if the provided object is equal to this {@link ACVersion}.
      *
      * @param obj the object to compare.
-     * @return true if the provided object is equal to this {@link ACEVersion}, false otherwise.
+     * @return true if the provided object is equal to this {@link ACVersion}, false otherwise.
      */
     @Override
     public boolean equals(@NotNull final Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof ACEVersion)) return false;
-        ACEVersion other = (ACEVersion) obj;
+        if (!(obj instanceof ACVersion)) return false;
+        ACVersion other = (ACVersion) obj;
 
         return this.major == other.major &&
                 this.minor == other.minor &&
@@ -193,25 +193,25 @@ public class ACEVersion implements Comparable<ACEVersion> {
     /**
      * Checks if this version is newer than the provided version.
      *
-     * @param otherVersion the other {@link ACEVersion}.
+     * @param otherVersion the other {@link ACVersion}.
      * @return true if this version is newer, false otherwise.
      */
-    public boolean isNewerThan(@NotNull final ACEVersion otherVersion) {
+    public boolean isNewerThan(@NotNull final ACVersion otherVersion) {
         return this.compareTo(otherVersion) > 0;
     }
 
     /**
      * Checks if this version is older than the provided version.
      *
-     * @param otherVersion the other {@link AHIVersion}.
+     * @param otherVersion the other {@link ACVersion}.
      * @return true if this version is older, false otherwise.
      */
-    public boolean isOlderThan(@NotNull final ACEVersion otherVersion) {
+    public boolean isOlderThan(@NotNull final ACVersion otherVersion) {
         return this.compareTo(otherVersion) < 0;
     }
 
     /**
-     * Returns a hash code value for this {@link ACEVersion}.
+     * Returns a hash code value for this {@link ACVersion}.
      *
      * @return a hash code value.
      */
@@ -221,17 +221,17 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Creates and returns a copy of this {@link ACEVersion}.
+     * Creates and returns a copy of this {@link ACVersion}.
      *
      * @return a clone of this instance.
      */
     @Override
-    public AHIVersion clone() {
-        return new ACEVersion(major, minor, patch, snapshot, snapshotCommit);
+    public ACVersion clone() {
+        return new ACVersion(major, minor, patch, snapshot, snapshotCommit);
     }
 
     /**
-     * Converts the {@link ACEVersion} to a string representation.
+     * Converts the {@link ACVersion} to a string representation.
      * If this is a stable release, the snapshot and the commit will not be included in the representation.
      *
      * @return string representation of the version.
@@ -242,7 +242,7 @@ public class ACEVersion implements Comparable<ACEVersion> {
     }
 
     /**
-     * Converts the {@link ACEVersion} to a string representation with a guarantee
+     * Converts the {@link ACVersion} to a string representation with a guarantee
      * that it will not have the commit attached to it.
      * Useful for accessing the string representation for metrics
      * as detailed information, such as the commit, is not required.
