@@ -1,0 +1,15 @@
+{
+  "id": "anticheatbase",
+  "name": "AnticheatBase",
+  "version": "${version}",
+  "authors": [
+    "Bram"
+  ],
+  "dependencies": [
+    {
+      "id": "packetevents",
+      "optional": false
+    }
+  ],
+  "main": "com.deathmotion.anticheatbase.velocity.ACVelocity"
+}

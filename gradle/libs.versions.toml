@@ -1,6 +1,7 @@
 [versions]
 lombok = "1.18.42"
 paper = "1.21.8-R0.1-SNAPSHOT"
+velocity = "3.4.0-SNAPSHOT"
 
 shadow = "9.2.2"
 run-paper = "3.0.2"
@@ -8,7 +9,9 @@ run-paper = "3.0.2"
 [libraries]
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+velocity = { group = "com.velocitypowered", name = "velocity-api", version.ref = "velocity" }
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
+run-velocity = { id = "xyz.jpenilla.run-velocity", version.ref = "run-paper" }

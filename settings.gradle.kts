@@ -13,3 +13,4 @@ rootProject.name = "AnticheatBase"
 include(":api")
 include(":common")
 include(":platforms:bukkit")
+include(":platforms:velocity")
