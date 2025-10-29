@@ -5,20 +5,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 public class ACBukkit extends JavaPlugin {
-    private final ACBukkitPlatform ahi = new ACBukkitPlatform(this);
+    private final ACBukkitPlatform ac = new ACBukkitPlatform(this);
 
     @Override
     public void onLoad() {
-        ahi.commonOnInitialize();
+        ac.commonOnInitialize();
     }
 
     @Override
     public void onEnable() {
-        ahi.commonOnEnable();
+        ac.commonOnEnable();
     }
 
     @Override
     public void onDisable() {
-        ahi.commonOnDisable();
+        ac.commonOnDisable();
     }
 }
