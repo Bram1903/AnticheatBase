@@ -10,11 +10,14 @@ public abstract class ACPlatform {
     @Getter
     private static ACPlatform instance;
 
-    private Logger logger;
+    private final Logger logger;
+
+    public ACPlatform() {
+        logger = Logger.getLogger("AntiCheatBase");
+    }
 
     public void commonOnInitialize() {
         instance = this;
-        logger = Logger.getLogger("AntiCheatBase");
         AnticheatBase.init(new ACPlatformAPI());
 
         logger.info("AntiCheatBase initialized.");
