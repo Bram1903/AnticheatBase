@@ -11,10 +11,12 @@ import org.jetbrains.annotations.NotNull;
 public final class ACPlatformAPI implements AnticheatBaseAPI {
 
     private final ACPlatform platform;
-    private final EventBus eventBus = new EventBusImpl();
+    private final EventBus eventBus;
 
     public ACPlatformAPI(ACPlatform platform) {
         this.platform = platform;
+        this.eventBus = new EventBusImpl();
+
         platform.getLogger().info("API initialized.");
     }
 
