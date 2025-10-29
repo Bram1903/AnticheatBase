@@ -3,8 +3,8 @@ package com.deathmotion.anticheatbase.api;
 import java.util.concurrent.CompletableFuture;
 
 public final class AnticheatBase {
-    private static AnticheatBaseAPI instance;
     private static final CompletableFuture<AnticheatBaseAPI> futureInstance = new CompletableFuture<>();
+    private static AnticheatBaseAPI instance;
 
     private AnticheatBase() {
         // Private constructor to prevent instantiation

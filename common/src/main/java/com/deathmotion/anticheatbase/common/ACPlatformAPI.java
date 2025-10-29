@@ -1,10 +1,9 @@
-package com.deathmotion.anticheatbase.common.api;
+package com.deathmotion.anticheatbase.common;
 
 import com.deathmotion.anticheatbase.api.AnticheatBaseAPI;
 import com.deathmotion.anticheatbase.api.event.EventBus;
 import com.deathmotion.anticheatbase.api.versioning.ACVersion;
-import com.deathmotion.anticheatbase.common.ACPlatform;
-import com.deathmotion.anticheatbase.common.api.impl.EventBusImpl;
+import com.deathmotion.anticheatbase.common.events.EventBusImpl;
 import com.deathmotion.anticheatbase.common.util.ACVersions;
 import org.jetbrains.annotations.NotNull;
 

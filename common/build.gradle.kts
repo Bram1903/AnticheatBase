@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":api"))
+    compileOnly(libs.packetevents.api)
 }
 
 tasks {

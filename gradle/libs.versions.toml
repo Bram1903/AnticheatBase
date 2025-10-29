@@ -1,5 +1,5 @@
 [versions]
-lombok = "1.18.42"
+packetevents = "2.10.0"
 paper = "1.21.8-R0.1-SNAPSHOT"
 velocity = "3.4.0-SNAPSHOT"
 
@@ -7,7 +7,7 @@ shadow = "9.2.2"
 run-paper = "3.0.2"
 
 [libraries]
-lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+packetevents-api = { group = "com.github.retrooper", name = "packetevents-api", version.ref = "packetevents" }
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 velocity = { group = "com.velocitypowered", name = "velocity-api", version.ref = "velocity" }
 

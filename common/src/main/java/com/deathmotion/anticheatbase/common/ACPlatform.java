@@ -1,7 +1,9 @@
 package com.deathmotion.anticheatbase.common;
 
 import com.deathmotion.anticheatbase.api.AnticheatBase;
-import com.deathmotion.anticheatbase.common.api.ACPlatformAPI;
+import com.deathmotion.anticheatbase.common.events.packet.PacketPlayerJoinQuit;
+import com.deathmotion.anticheatbase.common.manager.PlayerManager;
+import com.github.retrooper.packetevents.PacketEvents;
 import lombok.Getter;
 
 import java.util.logging.Logger;
@@ -15,6 +17,8 @@ public abstract class ACPlatform {
     private Logger logger;
     private ACPlatformAPI api;
 
+    private PlayerManager playerManager;
+
     public void commonOnInitialize() {
         instance = this;
 
@@ -23,8 +27,12 @@ public abstract class ACPlatform {
     }
 
     public void commonOnEnable() {
+        playerManager = new PlayerManager(this);
+
         api = new ACPlatformAPI(this);
         AnticheatBase.init(api);
+
+        PacketEvents.getAPI().getEventManager().registerListener(new PacketPlayerJoinQuit(this));
 
         logger.info("AntiCheatBase enabled.");
     }

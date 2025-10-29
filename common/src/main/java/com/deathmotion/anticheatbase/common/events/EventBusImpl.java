@@ -1,4 +1,4 @@
-package com.deathmotion.anticheatbase.common.api.impl;
+package com.deathmotion.anticheatbase.common.events;
 
 import com.deathmotion.anticheatbase.api.event.EventBus;
 
