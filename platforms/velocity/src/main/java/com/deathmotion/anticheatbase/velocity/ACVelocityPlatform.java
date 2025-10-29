@@ -7,13 +7,13 @@ import com.velocitypowered.api.proxy.ProxyServer;
 
 import java.nio.file.Path;
 
-public class VelocityAnticheat extends ACPlatform<ProxyServer> {
+public class ACVelocityPlatform extends ACPlatform {
 
     private final ProxyServer proxy;
     private final Path dataDirectory;
 
     @Inject
-    public VelocityAnticheat(ProxyServer proxy, @DataDirectory Path dataDirectory) {
+    public ACVelocityPlatform(ProxyServer proxy, @DataDirectory Path dataDirectory) {
         this.proxy = proxy;
         this.dataDirectory = dataDirectory;
     }

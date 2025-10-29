@@ -14,12 +14,12 @@ public class ACVelocity {
     private final ProxyServer server;
 
     @Getter
-    private final VelocityAnticheat ac;
+    private final ACVelocityPlatform ac;
 
     @Inject
     public ACVelocity(ProxyServer server, @DataDirectory Path dataDirectory) {
         this.server = server;
-        this.ac = new VelocityAnticheat(server, dataDirectory);
+        this.ac = new ACVelocityPlatform(server, dataDirectory);
     }
 
     @Subscribe

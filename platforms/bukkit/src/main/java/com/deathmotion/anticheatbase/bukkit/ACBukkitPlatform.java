@@ -23,11 +23,11 @@ import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
-public class BukkitAnticheat extends ACPlatform<JavaPlugin> {
+public class ACBukkitPlatform extends ACPlatform {
 
     private final JavaPlugin plugin;
 
-    public BukkitAnticheat(JavaPlugin plugin) {
+    public ACBukkitPlatform(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 }

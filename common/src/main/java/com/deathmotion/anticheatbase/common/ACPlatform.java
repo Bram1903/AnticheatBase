@@ -6,9 +6,9 @@ import lombok.Getter;
 import java.util.logging.Logger;
 
 @Getter
-public abstract class ACPlatform<P> {
+public abstract class ACPlatform {
     @Getter
-    private static ACPlatform<?> instance;
+    private static ACPlatform instance;
 
     private Logger logger;
 

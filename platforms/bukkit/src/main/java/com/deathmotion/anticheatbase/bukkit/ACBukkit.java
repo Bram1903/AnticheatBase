@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 public class ACBukkit extends JavaPlugin {
-    private final BukkitAnticheat ahi = new BukkitAnticheat(this);
+    private final ACBukkitPlatform ahi = new ACBukkitPlatform(this);
 
     @Override
     public void onLoad() {
