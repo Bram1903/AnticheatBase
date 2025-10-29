@@ -1,6 +1,7 @@
 package com.deathmotion.anticheatbase.common;
 
 import com.deathmotion.anticheatbase.api.AnticheatBase;
+import com.deathmotion.anticheatbase.common.api.ACPlatformAPI;
 import lombok.Getter;
 
 import java.util.logging.Logger;
