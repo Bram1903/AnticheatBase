@@ -1,5 +1,6 @@
 package com.deathmotion.anticheatbase.common.manager;
 
+import com.deathmotion.anticheatbase.api.event.impl.ACUserQuitEvent;
 import com.deathmotion.anticheatbase.common.ACPlatform;
 import com.deathmotion.anticheatbase.common.models.ACPlayer;
 import com.github.retrooper.packetevents.netty.channel.ChannelHelper;
@@ -21,16 +22,31 @@ public class PlayerManager {
         this.platform = platform;
     }
 
-    public void addUser(final @NotNull User user) {
+    public void onLoginPacket(final @NotNull User user) {
         if (!shouldCheck(user)) return;
 
         ACPlayer player = new ACPlayer(user);
         players.put(user, player);
     }
 
-    public @Nullable ACPlayer removeUser(final @NotNull User user) {
+    public void onLogin(final @NotNull User user) {
+        ACPlayer player = players.get(user);
+        if (player == null) return;
+
+        player.onLogin();
+    }
+
+    public void removeUser(final @NotNull User user) {
+        players.remove(user);
+    }
+
+    public void onPlayerDisconnect(final @NotNull User user) {
         exemptUsers.remove(user);
-        return players.remove(user);
+
+        ACPlayer player = players.remove(user);
+        if (player == null) return;
+
+        platform.getEventBus().post(new ACUserQuitEvent(player));
     }
 
     public @Nullable ACPlayer getPlayer(final @NotNull User user) {

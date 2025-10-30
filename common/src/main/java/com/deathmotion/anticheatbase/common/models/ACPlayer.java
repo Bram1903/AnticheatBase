@@ -1,5 +1,6 @@
 package com.deathmotion.anticheatbase.common.models;
 
+import com.deathmotion.anticheatbase.api.event.impl.ACUserJoinEvent;
 import com.deathmotion.anticheatbase.api.models.ACUser;
 import com.deathmotion.anticheatbase.common.ACPlatform;
 import com.deathmotion.anticheatbase.common.manager.PlayerManager;
@@ -32,7 +33,7 @@ public class ACPlayer implements ACUser {
             return;
         }
 
-        ACPlatform.getInstance().getLogger().info("User " + user.getName() + " logged in.");
+        ACPlatform.getInstance().getEventBus().post(new ACUserJoinEvent(this));
     }
 
     @Override

@@ -1,0 +1,16 @@
+{
+  "id": "apitestplugin",
+  "name": "APITestPlugin",
+  "version": "${version}",
+  "description": "A test plugin for the AntiCheatBase API.",
+  "authors": [
+    "Bram"
+  ],
+  "dependencies": [
+    {
+      "id": "anticheatbase",
+      "optional": false
+    }
+  ],
+  "main": "com.deathmotion.anticheatbase.velocity.testplugin.ApiTestPlugin"
+}
