@@ -22,7 +22,7 @@ public class ACUserJoinEventListener {
         }
     }
 
-    public void onUserJoin(ACUserJoinEvent event) {
+    private void onUserJoin(ACUserJoinEvent event) {
         plugin.getLogger().info("User " + event.user.getName() + " joined the server.");
     }
 }

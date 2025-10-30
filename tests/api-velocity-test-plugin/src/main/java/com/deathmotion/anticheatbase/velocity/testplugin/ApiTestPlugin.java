@@ -26,7 +26,6 @@ public final class ApiTestPlugin {
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent ignoredEvent) {
         AnticheatBase.getAsync().thenAccept(api -> {
-            api = AnticheatBase.get();
             logger.info("Hooked into AnticheatBase version {}.", api.getVersion());
 
             acUserJoinEventListener = new ACUserJoinEventListener(this, api);

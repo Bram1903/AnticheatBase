@@ -16,7 +16,6 @@ public final class ApiTestPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         AnticheatBase.getAsync().thenAccept(api -> {
-            api = AnticheatBase.get();
             getLogger().info("Hooked into AnticheatBase version " + api.getVersion() + ".");
 
             acUserJoinEventListener = new ACUserJoinEventListener(this, api);

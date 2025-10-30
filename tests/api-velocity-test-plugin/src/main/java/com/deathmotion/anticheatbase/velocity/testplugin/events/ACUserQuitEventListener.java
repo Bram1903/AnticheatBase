@@ -22,7 +22,7 @@ public class ACUserQuitEventListener {
         }
     }
 
-    public void onUserJoin(ACUserQuitEvent event) {
+    private void onUserJoin(ACUserQuitEvent event) {
         plugin.getLogger().info("User " + event.user.getName() + " has quit the server.");
     }
 }
