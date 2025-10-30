@@ -15,8 +15,6 @@ public final class ACPlatformAPI implements AnticheatBaseAPI {
     public ACPlatformAPI(ACPlatform platform) {
         this.platform = platform;
         this.eventBus = new EventBusImpl();
-
-        platform.getLogger().info("API initialized.");
     }
 
     @Override

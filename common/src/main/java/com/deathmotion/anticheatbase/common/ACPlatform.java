@@ -21,12 +21,10 @@ public abstract class ACPlatform {
 
     public void commonOnInitialize() {
         instance = this;
-
-        logger = Logger.getLogger("AntiCheatBase");
-        logger.info("AntiCheatBase initialized.");
     }
 
     public void commonOnEnable() {
+        logger = Logger.getLogger("AntiCheatBase");
         playerManager = new PlayerManager(this);
 
         api = new ACPlatformAPI(this);
