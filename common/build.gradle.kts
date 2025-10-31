@@ -6,6 +6,8 @@ plugins {
 dependencies {
     implementation(project(":api"))
     compileOnly(libs.packetevents.api)
+    compileOnly(libs.bundles.adventure)
+    compileOnly(libs.bundles.adventure.serializers)
 }
 
 tasks {

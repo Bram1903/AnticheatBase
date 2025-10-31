@@ -3,6 +3,7 @@ package com.deathmotion.anticheatbase.common.manager;
 import com.deathmotion.anticheatbase.api.event.impl.ACUserQuitEvent;
 import com.deathmotion.anticheatbase.common.ACPlatform;
 import com.deathmotion.anticheatbase.common.models.ACPlayer;
+import com.deathmotion.anticheatbase.common.platform.player.PlatformUser;
 import com.github.retrooper.packetevents.netty.channel.ChannelHelper;
 import com.github.retrooper.packetevents.protocol.player.User;
 import org.jetbrains.annotations.NotNull;
@@ -58,12 +59,21 @@ public class PlayerManager {
     }
 
     public boolean shouldCheck(User user) {
+        return shouldCheck(user, null);
+    }
+
+    public boolean shouldCheck(User user, @Nullable PlatformUser platformUser) {
         if (exemptUsers.contains(user)) return false;
         if (!ChannelHelper.isOpen(user.getChannel())) return false;
         if (user.getUUID() == null) return false;
 
         // Is a Geyser (Bedrock) player
         if (user.getUUID().getMostSignificantBits() == 0L) {
+            exemptUsers.add(user);
+            return false;
+        }
+
+        if (platformUser != null && platformUser.hasPermission("AnticheatBase.Bypass")) {
             exemptUsers.add(user);
             return false;
         }

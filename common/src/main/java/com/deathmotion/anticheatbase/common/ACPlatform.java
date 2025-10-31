@@ -4,6 +4,7 @@ import com.deathmotion.anticheatbase.api.AnticheatBase;
 import com.deathmotion.anticheatbase.common.events.EventBusImpl;
 import com.deathmotion.anticheatbase.common.events.packet.PacketPlayerJoinQuit;
 import com.deathmotion.anticheatbase.common.manager.PlayerManager;
+import com.deathmotion.anticheatbase.common.platform.player.PlatformUserFactory;
 import com.github.retrooper.packetevents.PacketEvents;
 import lombok.Getter;
 
@@ -13,10 +14,10 @@ import java.util.logging.Logger;
 public abstract class ACPlatform {
 
     @Getter
-    private final boolean isProxy;
+    private static ACPlatform instance;
 
     @Getter
-    private static ACPlatform instance;
+    private final boolean isProxy;
 
     private Logger logger;
     private ACPlatformAPI api;
@@ -53,4 +54,5 @@ public abstract class ACPlatform {
         logger.info("AntiCheatBase disabled.");
     }
 
+    public abstract PlatformUserFactory getPlatformUserFactory();
 }
