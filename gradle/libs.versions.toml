@@ -2,16 +2,22 @@
 packetevents = "2.10.0"
 paper = "1.21.8-R0.1-SNAPSHOT"
 velocity = "3.4.0-SNAPSHOT"
+bungeecord = "1.21-R0.5-SNAPSHOT"
+sponge = "14.0.0"
 
 shadow = "9.2.2"
 run-paper = "3.0.2"
+spongeGradle = "2.3.0"
 
 [libraries]
 packetevents-api = { group = "com.github.retrooper", name = "packetevents-api", version.ref = "packetevents" }
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 velocity = { group = "com.velocitypowered", name = "velocity-api", version.ref = "velocity" }
+bungeecord = { group = "net.md-5", name = "bungeecord-api", version.ref = "bungeecord" }
+sponge = { group = "org.spongepowered", name = "spongeapi", version.ref = "sponge" }
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }
 run-velocity = { id = "xyz.jpenilla.run-velocity", version.ref = "run-paper" }
+spongeGradle = { id = "org.spongepowered.gradle.plugin", version.ref = "spongeGradle" }

@@ -27,10 +27,6 @@ tasks {
         archiveClassifier = null
         destinationDirectory = rootProject.layout.buildDirectory
         exclude("META-INF/maven/**")
-
-        manifest {
-            attributes["paperweight-mappings-namespace"] = "mojang"
-        }
     }
 
     assemble {

@@ -1,0 +1,7 @@
+name: AnticheatBase
+author: Bram
+description: An anticheat base
+main: com.deathmotion.anticheatbase.bungee.ACBungee
+version: ${version}
+depends:
+  - packetevents
