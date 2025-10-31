@@ -23,6 +23,6 @@ public class ACUserJoinEventListener {
     }
 
     private void onUserJoin(ACUserJoinEvent event) {
-        plugin.getLogger().info("User " + event.user.getName() + " joined the server.");
+        plugin.getLogger().info("User " + event.getUser().getName() + " joined the server.");
     }
 }
