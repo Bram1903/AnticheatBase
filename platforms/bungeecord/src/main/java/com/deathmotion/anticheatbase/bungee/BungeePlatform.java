@@ -10,6 +10,7 @@ public class BungeePlatform extends ACPlatform {
     private final Plugin plugin;
 
     public BungeePlatform(Plugin plugin) {
+        super(true);
         this.plugin = plugin;
     }
 }

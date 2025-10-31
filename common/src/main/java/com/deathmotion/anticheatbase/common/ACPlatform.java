@@ -13,6 +13,9 @@ import java.util.logging.Logger;
 public abstract class ACPlatform {
 
     @Getter
+    private final boolean isProxy;
+
+    @Getter
     private static ACPlatform instance;
 
     private Logger logger;
@@ -20,6 +23,14 @@ public abstract class ACPlatform {
 
     private EventBusImpl eventBus;
     private PlayerManager playerManager;
+
+    public ACPlatform() {
+        this.isProxy = false;
+    }
+
+    public ACPlatform(boolean isProxy) {
+        this.isProxy = isProxy;
+    }
 
     public void commonOnInitialize() {
         instance = this;

@@ -14,6 +14,7 @@ public class ACVelocityPlatform extends ACPlatform {
 
     @Inject
     public ACVelocityPlatform(ProxyServer proxy, @DataDirectory Path dataDirectory) {
+        super(true);
         this.proxy = proxy;
         this.dataDirectory = dataDirectory;
     }
