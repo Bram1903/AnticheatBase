@@ -3,6 +3,7 @@ import org.spongepowered.plugin.metadata.model.PluginDependency
 
 plugins {
     anticheat.`java-conventions`
+    `anticheat-plugin`.`java-conventions`
     alias(libs.plugins.shadow)
     alias(libs.plugins.spongeGradle)
 }

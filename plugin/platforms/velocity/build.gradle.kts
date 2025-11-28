@@ -1,5 +1,6 @@
 plugins {
     anticheat.`java-conventions`
+    `anticheat-plugin`.`java-conventions`
     alias(libs.plugins.shadow)
     alias(libs.plugins.run.velocity)
 }
@@ -35,7 +36,7 @@ tasks {
 
     runVelocity {
         velocityVersion(libs.versions.velocity.get())
-
+        runDirectory = rootDir.resolve("run/plugin/velocity/")
         downloadPlugins {
             url("https://cdn.modrinth.com/data/HYKaKraK/versions/BMvG9QW5/packetevents-velocity-2.10.0.jar")
         }

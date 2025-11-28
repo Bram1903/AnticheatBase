@@ -1,5 +1,6 @@
 plugins {
     anticheat.`java-conventions`
+    `anticheat-plugin`.`java-conventions`
     alias(libs.plugins.shadow)
     alias(libs.plugins.run.paper)
 }
@@ -55,7 +56,7 @@ tasks {
 
     runServer {
         minecraftVersion(version)
-        runDirectory = rootDir.resolve("run/paper/$version")
+        runDirectory = rootDir.resolve("run/plugin/paper/$version")
 
         javaLauncher = project.javaToolchains.launcherFor {
             languageVersion = javaVersion
@@ -72,7 +73,7 @@ tasks {
 
     runPaper.folia.registerTask {
         minecraftVersion(version)
-        runDirectory = rootDir.resolve("run/folia/$version")
+        runDirectory = rootDir.resolve("run/plugin/folia/$version")
 
         javaLauncher = project.javaToolchains.launcherFor {
             languageVersion = javaVersion

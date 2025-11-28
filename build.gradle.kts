@@ -1,4 +1,5 @@
-val fullVersion = "1.0.0"
+val acVersionFull = "1.0.0"
+val loaderVersion = "1.0.0"
 val snapshot = true
 
 fun getVersionMeta(includeHash: Boolean): String {
@@ -17,5 +18,7 @@ fun getVersionMeta(includeHash: Boolean): String {
 
     return "$commitHash-SNAPSHOT"
 }
-version = "$fullVersion${getVersionMeta(true)}"
-ext["versionNoHash"] = "$fullVersion${getVersionMeta(false)}"
+
+version = "$acVersionFull${getVersionMeta(true)}"
+ext["acVersionNoHash"] = "$acVersionFull${getVersionMeta(false)}"
+ext["loaderVersionNoHash"] = loaderVersion

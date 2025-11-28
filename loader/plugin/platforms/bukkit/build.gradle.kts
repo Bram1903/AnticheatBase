@@ -1,5 +1,6 @@
 plugins {
     anticheat.`java-conventions`
+    `anticheat-loader-plugin`.`java-conventions`
 }
 
 repositories {

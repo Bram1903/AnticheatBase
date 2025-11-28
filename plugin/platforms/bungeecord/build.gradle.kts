@@ -1,5 +1,6 @@
 plugins {
     anticheat.`java-conventions`
+    `anticheat-plugin`.`java-conventions`
     alias(libs.plugins.shadow)
 }
 
