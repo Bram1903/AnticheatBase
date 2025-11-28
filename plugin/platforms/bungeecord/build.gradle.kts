@@ -23,7 +23,7 @@ tasks {
     }
 
     shadowJar {
-        archiveFileName = "${rootProject.name}-Bungee-${rootProject.ext["versionNoHash"]}.jar"
+        archiveFileName = "${rootProject.name}-Bungee-${rootProject.ext["acVersionNoHash"]}.jar"
         archiveClassifier = null
         destinationDirectory = rootProject.layout.buildDirectory
         exclude("META-INF/maven/**")

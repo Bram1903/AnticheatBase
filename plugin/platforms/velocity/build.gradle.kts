@@ -24,7 +24,7 @@ tasks {
     }
 
     shadowJar {
-        archiveFileName = "${rootProject.name}-Velocity-${rootProject.ext["versionNoHash"]}.jar"
+        archiveFileName = "${rootProject.name}-Velocity-${rootProject.ext["acVersionNoHash"]}.jar"
         archiveClassifier = null
         destinationDirectory = rootProject.layout.buildDirectory
         exclude("META-INF/maven/**")
