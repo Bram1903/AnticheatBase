@@ -3,7 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":loader:plugin:shared"))
 }
 
 tasks {

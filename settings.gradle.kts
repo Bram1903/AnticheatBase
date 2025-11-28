@@ -10,7 +10,6 @@ plugins {
 
 rootProject.name = "AnticheatBase"
 
-include(":loader:plugin:shared")
 include(":loader:plugin:common")
 include(":loader:plugin:platforms:bukkit")
 

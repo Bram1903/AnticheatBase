@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     implementation(project(":plugin:common"))
-    compileOnly(project(":loader:plugin:shared"))
+    compileOnly(project(":loader:plugin:common"))
     compileOnly(libs.paper)
 }
 

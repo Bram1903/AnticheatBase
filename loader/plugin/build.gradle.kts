@@ -6,7 +6,6 @@ plugins {
 }
 
 dependencies {
-    compileOnly(project(":loader:plugin:shared"))
     implementation(project(":loader:plugin:common"))
     implementation(project(":loader:plugin:platforms:bukkit"))
 }
