@@ -42,8 +42,7 @@ public final class ByteClassLoader extends SecureClassLoader {
 
     private static Set<String> loadNames(byte[] jarBytes) throws IOException {
         Set<String> set = new HashSet<>();
-        try (ZipInputStream jis =
-                     new ZipInputStream(new ByteArrayInputStream(jarBytes))) {
+        try (ZipInputStream jis = new ZipInputStream(new ByteArrayInputStream(jarBytes))) {
             ZipEntry entry;
             while ((entry = jis.getNextEntry()) != null) {
                 set.add(entry.getName());
