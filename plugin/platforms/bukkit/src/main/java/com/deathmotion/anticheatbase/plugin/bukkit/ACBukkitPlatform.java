@@ -1,20 +1,25 @@
 package com.deathmotion.anticheatbase.plugin.bukkit;
 
+import com.deathmotion.anticheatbase.plugin.bukkit.player.BukkitPlatformUserFactory;
 import com.deathmotion.anticheatbase.plugin.common.ACPlatform;
 import com.deathmotion.anticheatbase.plugin.common.platform.player.PlatformUserFactory;
 import lombok.Getter;
+import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 public class ACBukkitPlatform extends ACPlatform {
 
-    private final ACBukkit plugin;
+    private final JavaPlugin plugin;
 
-    public ACBukkitPlatform(ACBukkit plugin) {
+    @Getter
+    private final BukkitPlatformUserFactory bukkitPlatformUserFactory = new BukkitPlatformUserFactory();
+
+    public ACBukkitPlatform(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
     @Override
     public PlatformUserFactory getPlatformUserFactory() {
-        return plugin.getBukkitPlatformUserFactory();
+        return bukkitPlatformUserFactory;
     }
 }

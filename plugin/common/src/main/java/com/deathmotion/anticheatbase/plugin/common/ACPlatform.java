@@ -33,11 +33,8 @@ public abstract class ACPlatform {
         this.isProxy = isProxy;
     }
 
-    public void commonOnInitialize() {
-        instance = this;
-    }
-
     public void commonOnEnable() {
+        instance = this;
         logger = Logger.getLogger("AntiCheatBase");
 
         eventBus = new EventBusImpl();
