@@ -10,11 +10,15 @@ plugins {
 
 rootProject.name = "AnticheatBase"
 
+include(":loader:plugin:common")
+include(":loader:plugin:platforms:bukkit")
+
 include(":plugin:api")
 include(":plugin:common")
 include(":plugin:platforms:bukkit")
 //include(":plugin:platforms:velocity")
 //include(":plugin:platforms:bungeecord")
 //include(":plugin:platforms:sponge")
+
 include(":plugin:tests:api-bukkit-test-plugin")
 include(":plugin:tests:api-velocity-test-plugin")

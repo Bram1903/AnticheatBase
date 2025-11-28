@@ -16,6 +16,6 @@ tasks {
     }
 
     generateVersionsFile {
-        packageName = "com.deathmotion.anticheatbase.common.util"
+        packageName = "com.deathmotion.anticheatbase.plugin.common.util"
     }
 }
