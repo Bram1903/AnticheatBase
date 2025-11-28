@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":api"))
+    implementation(project(":plugin:api"))
     compileOnly(libs.packetevents.api)
     compileOnly(libs.bundles.adventure)
     compileOnly(libs.bundles.adventure.serializers)

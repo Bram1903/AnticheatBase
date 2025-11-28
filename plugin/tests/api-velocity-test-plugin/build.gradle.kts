@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly(project(":api"))
+    compileOnly(project(":plugin:api"))
 
     compileOnly(libs.velocity)
     annotationProcessor(libs.velocity)

@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":common"))
+    implementation(project(":plugin:common"))
     compileOnly(libs.paper)
 }
 
