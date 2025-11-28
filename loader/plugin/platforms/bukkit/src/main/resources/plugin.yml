@@ -1,7 +1,0 @@
-name: AnticheatBaseLoader
-author: Bram
-main: com.deathmotion.anticheatbase.loader.plugin.bukkit.ACBukkitLoader
-version: ${version}
-api-version: '1.13'
-folia-supported: true
-load: POSTWORLD

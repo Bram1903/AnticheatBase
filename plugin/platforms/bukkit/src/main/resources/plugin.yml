@@ -1,6 +1,6 @@
 name: AnticheatBase
 author: Bram
-main: com.deathmotion.anticheatbase.plugin.bukkit.ACBukkit
+main: com.deathmotion.anticheatbase.plugin.bukkit.loaders.BukkitLoader
 version: ${version}
 api-version: '1.13'
 folia-supported: true

@@ -56,6 +56,7 @@ public class ACPlayer implements ACUser {
             return;
         }
 
+        ACPlatform.getInstance().getLogger().info("Player " + getName() + " joined the server.");
         ACPlatform.getInstance().getEventBus().post(new ACUserJoinEvent(this));
     }
 
